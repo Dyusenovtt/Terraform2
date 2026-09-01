@@ -20,3 +20,35 @@
 
 1 preemptible = true (прерываемая ВМ)
 2 core_fraction = 5 (гарантированная доля ядра)
+
+## Задание 2
+<img width="1910" height="554" alt="image" src="https://github.com/user-attachments/assets/385332cf-ca84-46f3-981f-4f636f24bcdb" />
+
+
+В файл `variables.tf` добавлены переменные с префиксом `vm_web_`:
+
+```hcl
+variable "vm_web_name" {
+  type    = string
+  default = "netology-develop-platform-web"
+}
+variable "vm_web_platform_id" {
+  type    = string
+  default = "standard-v3"
+}
+variable "vm_web_cores" {
+  type    = number
+  default = 2
+}
+variable "vm_web_memory" {
+  type    = number
+  default = 2
+}
+variable "vm_web_core_fraction" {
+  type    = number
+  default = 20
+}
+variable "vm_web_image_family" {
+  type    = string
+  default = "ubuntu-2004-lts"
+}
