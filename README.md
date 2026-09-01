@@ -53,4 +53,5 @@ variable "vm_web_image_family" {
   default = "ubuntu-2004-lts"
 }
 ### В main.tf хардкод заменен на переменные.
-` ``` `
+```
+
