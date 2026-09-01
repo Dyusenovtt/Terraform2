@@ -54,4 +54,74 @@ variable "vm_web_image_family" {
 }
 ### В main.tf хардкод заменен на переменные.
 ```
+## Задание 3
+### Файл vms_platform.tf:
+
+```hcl
+### VM web variables
+
+variable "vm_web_name" {
+  type    = string
+  default = "netology-develop-platform-web"
+}
+
+variable "vm_web_platform_id" {
+  type    = string
+  default = "standard-v3"
+}
+
+variable "vm_web_cores" {
+  type    = number
+  default = 2
+}
+
+variable "vm_web_memory" {
+  type    = number
+  default = 2
+}
+
+variable "vm_web_core_fraction" {
+  type    = number
+  default = 20
+}
+
+variable "vm_web_image_family" {
+  type    = string
+  default = "ubuntu-2004-lts"
+}
+
+### VM db variables
+
+variable "vm_db_name" {
+  type    = string
+  default = "netology-develop-platform-db"
+}
+
+variable "vm_db_platform_id" {
+  type    = string
+  default = "standard-v3"
+}
+
+variable "vm_db_cores" {
+  type    = number
+  default = 2
+}
+
+variable "vm_db_memory" {
+  type    = number
+  default = 2
+}
+
+variable "vm_db_core_fraction" {
+  type    = number
+  default = 20
+}
+
+variable "vm_db_image_family" {
+  type    = string
+  default = "ubuntu-2004-lts"
+}
+```
+<img width="3111" height="525" alt="image" src="https://github.com/user-attachments/assets/c0f76f5e-fb7f-4584-be0f-3f1172cb05e2" />
+
 
