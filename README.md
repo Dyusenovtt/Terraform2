@@ -126,5 +126,140 @@ variable "vm_db_image_family" {
 ## Задание 4: Outputs
 <img width="1921" height="451" alt="image" src="https://github.com/user-attachments/assets/3ec2a547-5967-465b-be22-3dd09b81afec" />
 
+## Задание 5 
+<img width="1896" height="957" alt="image" src="https://github.com/user-attachments/assets/adbe31f3-3e2b-4941-a488-ff4a3d5c55ad" />
+
+<img width="1905" height="400" alt="image" src="https://github.com/user-attachments/assets/374d4006-d13c-4bbc-91e5-b0d2830dba0d" />
+
+```hcl
+locals {
+  web_vm_name = "netology-${var.vpc_name}-web-${var.vm_web_cores}-core"
+  db_vm_name  = "netology-${var.vpc_name}-db-${var.vm_db_cores}-core"
+}
+```
+## Задание 6 
+vms_platform.tf
+```hcl
+variable "vms_resources" {
+  type = map(object({
+    cores         = number
+    memory        = number
+    core_fraction = number
+  }))
+  default = {
+    web = {
+      cores         = 2
+      memory        = 2
+      core_fraction = 20
+    }
+    db = {
+      cores         = 2
+      memory        = 2
+      core_fraction = 20
+    }
+  }
+}
+```
+variables.tf
+```hcl
+variable "metadata" {
+  type = map(string)
+  default = {
+    serial-port-enable = "1"
+  }
+}
+```
+закомментировали ненужное. 
+```hcl
+root@myterra:~/ter-homeworks/02/src# cat vms_platform.tf 
+### VM web variables
+
+# variable "vm_web_name" {
+#   type    = string
+#   default = "netology-develop-platform-web"
+# }
+
+# variable "vm_web_platform_id" {
+#   type    = string
+#   default = "standard-v3"
+# }
+
+# variable "vm_web_cores" {
+#   type    = number
+#   default = 2
+# }
+
+# variable "vm_web_memory" {
+#   type    = number
+#   default = 2
+# }
+
+# variable "vm_web_core_fraction" {
+#   type    = number
+#   default = 20
+# }
+
+# variable "vm_web_image_family" {
+#   type    = string
+#   default = "ubuntu-2004-lts"
+# }
+
+### VM db variables
+
+# variable "vm_db_name" {
+#   type    = string
+#   default = "netology-develop-platform-db"
+# }
+
+# variable "vm_db_platform_id" {
+#   type    = string
+#   default = "standard-v3"
+# }
+
+# variable "vm_db_cores" {
+#   type    = number
+#   default = 2
+# }
+
+# variable "vm_db_memory" {
+#   type    = number
+#   default = 2
+# }
+
+# variable "vm_db_core_fraction" {
+#   type    = number
+#   default = 20
+# }
+
+# variable "vm_db_image_family" {
+#   type    = string
+#   default = "ubuntu-2004-lts"
+# }
+
+### VM resources variable
+
+variable "vms_resources" {
+  type = map(object({
+    cores         = number
+    memory        = number
+    core_fraction = number
+  }))
+  default = {
+    web = {
+      cores         = 2
+      memory        = 2
+      core_fraction = 20
+    }
+    db = {
+      cores         = 2
+      memory        = 2
+      core_fraction = 20
+    }
+  }
+}
+```
+Итог 
+<img width="1905" height="381" alt="image" src="https://github.com/user-attachments/assets/947b941c-4ca8-49ef-a209-ff161b2ca64e" />
+
 
 
