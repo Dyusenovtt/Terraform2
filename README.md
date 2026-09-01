@@ -123,5 +123,8 @@ variable "vm_db_image_family" {
 }
 ```
 <img width="3111" height="525" alt="image" src="https://github.com/user-attachments/assets/c0f76f5e-fb7f-4584-be0f-3f1172cb05e2" />
+## Задание 4: Outputs
+<img width="1921" height="451" alt="image" src="https://github.com/user-attachments/assets/3ec2a547-5967-465b-be22-3dd09b81afec" />
+
 
 
